@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(71, 68, 68);
+}
+
+.page-header {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.myTeamText {
+    border-top: 10px solid blue;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.rosterClass{
+    padding: 25px;
+    bottom: 0;
+    display: flex;
+    color: white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.roster-card{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: 0 10px;
+    border: 1px solid #eee;
+    padding: 8px;
+    border-radius: 10px;
+    background: darkblue
+}
