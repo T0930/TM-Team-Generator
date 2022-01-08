@@ -55,3 +55,27 @@ body {
 ul {
     border-top: 3px solid gray;
 }
+
+li {
+    border-bottom: 1px solid rgb(160, 160, 160);
+}
+
+/* .empID {
+ border-bottom: 1px solid white;
+}
+
+.empEmail {
+    border-bottom: 1px solid white;
+}
+
+.empGithub {
+    border-bottom: 1px solid white;
+}
+
+.officeNum {
+    border-bottom: 1px solid white;
+}
+
+.school {
+    border-bottom: 1px solid white;
+} */
