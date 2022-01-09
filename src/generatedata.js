@@ -1,12 +1,68 @@
-const Employee = require('../lib/employee');
 const Manager = require('../lib/manager');
 const Engineer = require('../lib/engineer');
 const Intern = require('../lib/intern');
 
 
-function generateData(details){
+let generateManager = (Manager) => {
+  return `
+  <div class="roster-card manager">
+  <div class="name">${Manager.getName()}</div>
+  <div class="role manager"><i class="fas fa-mug-hot"></i> ${Manager.getRole()}</div>
+      <ul>
+          <li class = 'empID'>Employee ID#: ${Manager.getId()}</li>
+          <li class = 'empEmail'><a href="mailto:${Manager.getEmail()}">${Manager.getEmail()}</a></li>
+          <li class = 'officeNum'>Office Number: ${Manager.getOfficeNumber()}</li>
+      </ul>
+  </div>
+`
+}
 
-    return `<!DOCTYPE html>
+let generateEngineer = (Engineer) => {
+  return `
+  <div class="roster-card engineer">
+  <div class="name">${Engineer.getName()}</div>
+  <div class="role engineer"><i class="fas fa-glasses"></i> ${Engineer.getRole()}</div>
+      <ul>
+          <li class = 'empID'>Employee ID#: ${Engineer.getId()}</li>
+          <li class = 'empEmail'><a href="mailto:${Engineer.getEmail()}">${Engineer.getEmail()}</a></li>
+          <li class = 'empGithub'><a href="https://www.github.com/${Engineer.getGithub()}" target="_blank">GitHub Profile</a></li>
+      </ul>
+</div>`
+}
+
+let generateIntern = (Intern) => {
+  return `
+  <div class="roster-card intern">
+            <div class="name">${Intern.getName()}</div>
+            <div class="role intern"><i class="fas fa-user-graduate"></i> ${Intern.getRole()}</div>
+                <ul>
+                    <li class = 'empID'>Employee ID#: ${Intern.getId()}</li>
+                    <li class = 'empEmail'><a href="mailto:${Intern.getEmail()}">${Intern.getEmail()}</a></li>
+                    <li class = 'school'>School: ${Intern.getSchool()}</li>
+                </ul>
+          </div>`
+}
+
+function generateTeam(myTeam){
+  let boxes = [];
+  for(let i = 0; i < myTeam.length; i++){
+    let wholeTeam = myTeam[i];
+    if ((wholeTeam.getRole()) === 'Manager') {
+      const manager = new Manager(wholeTeam.name, wholeTeam.id, wholeTeam.email, wholeTeam.officeNumber);
+      boxes.push(generateManager(manager));
+    } else if ((wholeTeam.getRole()) === "Engineer") {
+      const engineer = new Engineer(wholeTeam.name, wholeTeam.id, wholeTeam.email, wholeTeam.github);
+      boxes.push(generateEngineer(engineer));
+    } else {
+      const intern = new Intern(wholeTeam.name, wholeTeam.id, wholeTeam.email, wholeTeam.school);
+      boxes.push(generateIntern(intern));
+    }
+}
+return boxes.join('')
+}
+
+function generateData(myTeam){
+    return `  <!DOCTYPE html>
     <html lang="en">
     
     <head>
@@ -26,80 +82,35 @@ function generateData(details){
       </div>
       <h2 class = "myTeamText">My Team</h2>
     </header>
-    s
     <body>
     
       <div class="fullRoster">
         <div class="rosterClass" id="rosterId">
-    
-          <div class="roster-card manager">
-            <div class="name">Name</div>
-            <div class="role manager"><i class="fas fa-mug-hot"></i>${details.value}</div>
-                <ul>
-                    <li class = 'empID'>ID #</li>
-                    <li class = 'empEmail'><a href="mailto:email@example.com">Employee E-mail</a></li>
-                    <li class = 'officeNum'>Office #</li>
-                </ul>
-          </div>
-    
-          <div class="roster-card engineer">
-            <div class="name">Name</div>
-            <div class="role engineer"><i class="fas fa-glasses"></i> Engineer</div>
-                <ul>
-                    <li class = 'empID'>ID #</li>
-                    <li class = 'empEmail'><a href="mailto:email@example.com">Employee E-mail</a></li>
-                    <li class = 'empGithub'><a href="https://www.github.com/" target="_blank">GitHub Link</a></li>
-                </ul>
-          </div>
-    
-          <div class="roster-card engineer">
-            <div class="name">Name</div>
-            <div class="role engineer"><i class="fas fa-glasses"></i> Engineer</div>
-                <ul>
-                    <li class = 'empID'>ID #</li>
-                    <li class = 'empEmail'><a href="mailto:email@example.com">Employee E-mail</a></li>
-                    <li class = 'empGithub'><a href="https://www.github.com/" target="_blank">GitHub Link</a></li>
-                </ul>
-          </div>
-    
-          <div class="roster-card engineer">
-            <div class="name">Name</div>
-            <div class="role engineer"><i class="fas fa-glasses"></i> Engineer</div>
-                <ul>
-                    <li class = 'empID'>ID #</li>
-                    <li class = 'empEmail'><a href="mailto:email@example.com">Employee E-mail</a></li>
-                    <li class = 'empGithub'><a href="https://www.github.com/" target="_blank">GitHub Link</a></li>
-                </ul>
-          </div>
-    
-          <div class="roster-card intern">
-            <div class="name">Name</div>
-            <div class="role intern"><i class="fas fa-user-graduate"></i> Intern</div>
-                <ul>
-                    <li class = 'empID'>ID #</li>
-                    <li class = 'empEmail'><a href="mailto:email@example.com">Employee E-mail</a></li>
-                    <li class = 'school'>Intern School</li>
-                </ul>
-          </div>
-    
+            ${generateTeam(myTeam)}
         </div>
       </div>
       </div>`;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = generateData;
+
+
+
+
+
+ // const team = [];
+  // team.push(teamFull
+  //     .filter(employee => employee.getRole() === "Manager")
+  //     .map(manager => createManager(manager))
+  // );
+  // team.push(teamFull
+  //     .filter(employee => employee.getRole() === "Engineer")
+  //     .map(engineer => createEngineer(engineer))
+  //     .join("")
+  // );
+  // team.push(teamFull
+  //     .filter(employee => employee.getRole() === "Intern")
+  //     .map(intern => createIntern(intern))
+  //     .join("")
+  // );
+  // return html.join("");
