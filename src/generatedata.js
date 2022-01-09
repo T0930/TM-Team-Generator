@@ -93,24 +93,3 @@ function generateData(myTeam){
 }
 
 module.exports = generateData;
-
-
-
-
-
- // const team = [];
-  // team.push(teamFull
-  //     .filter(employee => employee.getRole() === "Manager")
-  //     .map(manager => createManager(manager))
-  // );
-  // team.push(teamFull
-  //     .filter(employee => employee.getRole() === "Engineer")
-  //     .map(engineer => createEngineer(engineer))
-  //     .join("")
-  // );
-  // team.push(teamFull
-  //     .filter(employee => employee.getRole() === "Intern")
-  //     .map(intern => createIntern(intern))
-  //     .join("")
-  // );
-  // return html.join("");
