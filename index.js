@@ -91,7 +91,6 @@ function init() {
     inquirer.prompt(questionsManager)
     .then((data) => {
         const manager = new Manager(data.userName, data.userID, data.userEmail, data.officeNumber)
-        // let addManager = manager.map(Manager.getRole());
         myTeam.push(manager);
         teamAddition();
     })
