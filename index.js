@@ -135,7 +135,7 @@ function addIntern() {
 
 function buildTeam(myTeam){
     console.log(myTeam);
-    fs.writeFile('test.html', generateData(myTeam), (err) => {
+    fs.writeFile('./dist/test.html', generateData(myTeam), (err) => {
         err ? console.error(err) : console.log('Success!')
 })
 }
