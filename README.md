@@ -16,7 +16,7 @@
 
 
 ## Repository:
-[TM-README-GEN-Repository](https://github.com/T0930/TM-Team-Generator)
+[TM-Team-Generator-Repository](https://github.com/T0930/TM-Team-Generator)
 <br>
 [Video Demonstration](https://vimeo.com/665090238)
 
