@@ -12,6 +12,7 @@
 ## Screen Shots:  
 ![Preview](https://github.com/T0930/TM-Team-Generator/blob/main/images/input1.png?raw=true)
 ![Preview](https://github.com/T0930/TM-Team-Generator/blob/main/images/result.png?raw=true)
+![Preview](https://github.com/T0930/TM-Team-Generator/blob/main/images/tests.png?raw=true)
 
 
 ## Repository:
