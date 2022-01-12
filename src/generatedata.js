@@ -12,7 +12,7 @@ let generateManager = (Manager) => {
   </div>
   <ul id = "ulist" class="list-group list-group-flush">
     <li class="list-group-item ulist">Employee ID#: ${Manager.getId()}</li>
-    <li class="list-group-item ulist"><a href="mailto:${Manager.getEmail()}">E-mail: ${Manager.getEmail()}</a></li>
+    <li class="list-group-item ulist"><a href="mailto:${Manager.getEmail()}">${Manager.getEmail()}</a></li>
     <li class="list-group-item ulist">Office #: ${Manager.getOfficeNumber()}</li>
   </ul>
 </div>
