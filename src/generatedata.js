@@ -5,42 +5,50 @@ const Intern = require('../lib/intern');
 
 let generateManager = (Manager) => {
   return `
-  <div class="roster-card manager">
-  <div class="name">${Manager.getName()}</div>
-  <div class="role manager"><i class="fas fa-mug-hot"></i> ${Manager.getRole()}</div>
-      <ul>
-          <li class = 'empID'>Employee ID#: ${Manager.getId()}</li>
-          <li class = 'empEmail'><a href="mailto:${Manager.getEmail()}">${Manager.getEmail()}</a></li>
-          <li class = 'officeNum'>Office Number: ${Manager.getOfficeNumber()}</li>
-      </ul>
+  <div class="card" style="width: 18rem;">
+  <div class="card-header">
+     <div>${Manager.getName()}</div>
+    <i class="fas fa-mug-hot"></i> ${Manager.getRole()}
   </div>
+  <ul id = "ulist" class="list-group list-group-flush">
+    <li class="list-group-item ulist">Employee ID#: ${Manager.getId()}</li>
+    <li class="list-group-item ulist"><a href="mailto:${Manager.getEmail()}">E-mail: ${Manager.getEmail()}</a></li>
+    <li class="list-group-item ulist">Office #: ${Manager.getOfficeNumber()}</li>
+  </ul>
+</div>
 `
 }
 
 let generateEngineer = (Engineer) => {
   return `
-  <div class="roster-card engineer">
-  <div class="name">${Engineer.getName()}</div>
-  <div class="role engineer"><i class="fas fa-glasses"></i> ${Engineer.getRole()}</div>
-      <ul>
-          <li class = 'empID'>Employee ID#: ${Engineer.getId()}</li>
-          <li class = 'empEmail'><a href="mailto:${Engineer.getEmail()}">${Engineer.getEmail()}</a></li>
-          <li class = 'empGithub'><a href="https://www.github.com/${Engineer.getGithub()}" target="_blank">GitHub Profile</a></li>
-      </ul>
-</div>`
+  <div class="card" style="width: 18rem;">
+  <div class="card-header">
+     <div>${Engineer.getName()}</div>
+     <i class="fas fa-glasses"></i> ${Engineer.getRole()}
+  </div>
+  <ul id = "ulist" class="list-group list-group-flush">
+    <li class="list-group-item ulist">Employee ID#: ${Engineer.getId()}</li>
+    <li class="list-group-item ulist"><a href="mailto:${Engineer.getEmail()}">${Engineer.getEmail()}</a></li>
+    <li class="list-group-item ulist"><a href="https://www.github.com/${Engineer.getGithub()}" target="_blank">GitHub Profile</a></li>
+  </ul>
+</div>
+`
 }
 
 let generateIntern = (Intern) => {
   return `
-  <div class="roster-card intern">
-            <div class="name">${Intern.getName()}</div>
-            <div class="role intern"><i class="fas fa-user-graduate"></i> ${Intern.getRole()}</div>
-                <ul>
-                    <li class = 'empID'>Employee ID#: ${Intern.getId()}</li>
-                    <li class = 'empEmail'><a href="mailto:${Intern.getEmail()}">${Intern.getEmail()}</a></li>
-                    <li class = 'school'>School: ${Intern.getSchool()}</li>
-                </ul>
-          </div>`
+  <div class="card" style="width: 18rem;">
+  <div class="card-header">
+     <div>${Intern.getName()}</div>
+     <i class="fas fa-user-graduate"></i> ${Intern.getRole()}
+  </div>
+  <ul id = "ulist" class="list-group list-group-flush">
+    <li class="list-group-item ulist">Employee ID#: ${Intern.getId()}</li>
+    <li class="list-group-item ulist"><a href="mailto:${Intern.getEmail()}">${Intern.getEmail()}</a></li>
+    <li class="list-group-item ulist">School: ${Intern.getSchool()}</li>
+  </ul>
+</div>
+`
 }
 
 function generateTeam(myTeam){
