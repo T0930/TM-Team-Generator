@@ -10,13 +10,13 @@
 * 19 tests are run within 4 suites.
 
 ## Screen Shots:  
-![Preview](https://github.com/T0930/TM-README-Gen/blob/main/images/screenshot1.png?raw=true)
-![Preview](https://github.com/T0930/TM-README-Gen/blob/main/images/screenshot2.png?raw=true)
+![Preview](https://github.com/T0930/TM-Team-Generator/blob/main/images/input1.png?raw=true)
+![Preview](https://github.com/T0930/TM-Team-Generator/blob/main/images/result.png?raw=true)
 
 
 ## Repository:
 [TM-README-GEN-Repository](https://github.com/T0930/TM-Team-Generator)
 <br>
-[Video Demonstration](https://vimeo.com/663207631)
+[Video Demonstration](will update)
 
 
